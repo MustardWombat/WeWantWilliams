@@ -7,7 +7,7 @@ body {
     margin: 0;
     overflow-x: hidden;
     font-family: Arial, sans-serif;
-    background-color: #282828; /* Dark background */
+    background-color: #2E2E2E; /* Dark background */
     color: #333;
     line-height: 1.6;
 }
@@ -19,7 +19,7 @@ header {
     left: 0;
     width: 100%;
     background-color: rgba(51, 51, 51, 0.95); /* Dark background with opacity */
-    color: white;
+    color: #9A57D3;
     z-index: 100; /* Ensure header is above all other content */
     display: flex;
     justify-content: space-between;
@@ -28,24 +28,26 @@ header {
 
 /* h1 styling */
 header h1 {
-	text-align: center
+	text-align: center;
     margin-left: 20px;
     font-size: 1.2em;
 }
 
 /* Navigation styling */
 nav {
-    margin-right: 20px;
 }
 
 /* Navigation links styling */
 nav a {
-    color: white;
+    color: #F9A602;
     text-decoration: none;
     font-weight: normal;
     margin-left: 15px;
 }
-
+nav j{
+	margin-left: 500px;
+	margin-bottom: 50px;
+}
 nav a:hover {
     text-decoration: underline;
 }
