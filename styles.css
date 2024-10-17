@@ -1,46 +1,63 @@
 @charset "UTF-8";
 /* CSS Document */
 
-/* styles.css */
+/* General body styling */
 body {
-	padding-top: 150px;
-	margin: 0;
-	overflow-x: hidden;
+    padding-top: 200px; /* Adjust padding for header */
+    margin: 0;
+    overflow-x: hidden;
     font-family: Arial, sans-serif;
-    background-color: #282828;
+    background-color: #282828; /* Dark background */
     color: #333;
     line-height: 1.6;
 }
 
+/* Header styling */
 header {
-    top: 0; /* Ensures it's always at the top */
-    left: 0; /* Aligns it to the left edge */
-	position: fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    background-color: rgba(51, 51, 51, 0.95); /* Dark background with 80% opacity */
-    color: white; /* White text color */
-    text-align: left; /* Aligns text to the left */
-    padding: 0px; /* Adds space around the content */
-    z-index: 1; /* Makes sure it appears above the main content */
+    background-color: rgba(51, 51, 51, 0.95); /* Dark background with opacity */
+    color: white;
+    z-index: 100; /* Ensure header is above all other content */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+/* h1 styling */
+header h1 {
+	text-align: center
+    margin-left: 20px;
+    font-size: 1.2em;
+}
+
 /* Navigation styling */
 nav {
-    display: inline-block;
-	margin-left: 300px;
-	margin-right: 100px;
-
+    margin-right: 20px;
 }
 
-/* Styling the links in the navigation */
+/* Navigation links styling */
 nav a {
     color: white;
     text-decoration: none;
-    font-weight: normal; /* Unbolded links */
-	margin-left: 15px
+    font-weight: normal;
+    margin-left: 15px;
 }
-j {
-	margin-right: 100px;
-}
+
 nav a:hover {
-    text-decoration: underline; /* Optional hover effect */
+    text-decoration: underline;
+}
+
+/* Main content */
+main {
+    padding: 20px;
+    text-align: center;
+    color: white; /* Text in main content should be visible against dark background */
+}
+
+main img {
+    max-width: 100%;
+    height: auto;
 }
