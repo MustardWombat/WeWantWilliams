@@ -110,7 +110,7 @@ main img {
 }
 
 .email-button img {
-    width: 500px; /* Adjust the size of the image */
+    width: 630px; /* Adjust the size of the image */
     height: auto;
     border-radius: 5px; /* Optional: Add rounded corners */
     transition: transform 0.3s ease-in-out;
