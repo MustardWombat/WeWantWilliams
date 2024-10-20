@@ -125,9 +125,110 @@ main img {
     max-width: 500px;
     margin: 0 auto;
 }
-.p{
+.section_text{
 	text-align: left;
 }
 .align{
 	text-align:left;
+}
+/* Initial size for the PARC image */
+.parc-image {
+	align-content: center;
+    width: 380px;  /* Fixed width */
+    height: 300px; /* Initial height */
+    object-fit: cover; /* Ensure the image fits within the container */
+    overflow: hidden; /* Hide the parts of the image that go beyond the container */
+    transition: height 0.3s ease; /* Smooth transition effect for height */
+}
+
+/* Expands vertically on hover */
+.parc-image:hover {
+    height: 500px; /* Increases height on hover */
+}
+
+/* Container for image and arrow */
+.image-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Arrow indicating hover */
+.hover-arrow {
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white; /* The color of the arrow */
+    position: absolute;
+    bottom: -15px; /* Place arrow below the image */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.7;
+}
+
+/* Hover effect for the arrow */
+.image-container:hover .hover-arrow {
+    opacity: 1;
+    bottom: -20px; /* Moves the arrow down slightly for a hover effect */
+}
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+}
+
+.footer-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.footer-icon {
+    width: 30px;
+    margin: 0 10px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.footer-icon:hover {
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    padding: 10px;
+    font-size: 14px;
+    background-color: #222;
+    margin-top: 20px;
 }
