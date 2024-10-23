@@ -27,14 +27,14 @@ header {
 }
 
 /* Navigation links styling */
-.bruh a {
+.link a {
     color: white; /* Set link color to white */
     text-decoration: none;
     font-weight: normal;
     margin-left: 15px; /* Add spacing between links */
 }
 
-.bruh a:hover {
+.link a:hover {
     text-decoration: underline; /* Add underline on hover */
 }
 
