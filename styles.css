@@ -25,7 +25,7 @@ body {
 .sidebar {
     position: fixed;
     top: 50%;
-    left: 200px; /* Slight offset from the edge for a seamless look */
+    left: 100px; /* Slight offset from the edge for a seamless look */
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
