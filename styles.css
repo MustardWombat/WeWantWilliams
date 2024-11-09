@@ -1,242 +1,124 @@
 @charset "UTF-8";
-/* CSS Document */
-
-/* General body styling */
-body {
-    padding-top: 200px; /* Adjust padding for header */
+/* General Styles */
+* {
     margin: 0;
-    overflow-x: hidden;
-    font-family: Arial, sans-serif;
-    background-color: #2E2E2E; /* Dark background */
-    color: #333;
-    line-height: 1.6;
-}
-
-/* Header styling */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(51, 51, 51, 0.95); /* Dark background with opacity */
-    z-index: 100; /* Ensure header is above all other content */
-    display: flex; /* Flexbox for spacing */
-    justify-content: space-between; /* Evenly space elements */
-    align-items: center; /* Vertically align items */
-    padding: 10px 20px; /* Add padding for spacing */
-}
-
-/* Navigation links styling */
-.link a {
-    color: white; /* Set link color to white */
-    text-decoration: none;
-    font-weight: normal;
-    margin-left: 15px; /* Add spacing between links */
-}
-
-.link a:hover {
-    text-decoration: underline; /* Add underline on hover */
-}
-
-/* Main content */
-main {
-    padding: 20px;
-    text-align: center;
-    color: white; /* Text in main content should be visible against dark background */
-}
-
-main img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Styling for the GitHub button */
-.github-button {
-    display: inline-block;
-    padding: 10px 10px;
-    border: 2px solid #333;
-    border-radius: 5px;
-    background-color: #333;
-    color: white;
-    font-size: 16px;
-    text-decoration: none;
-    font-family: 'Arial', sans-serif;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-/* GitHub icon */
-.github-icon {
-    width: 35px;
-    height: auto;
-    vertical-align: middle;
-}
-
-/* Hover effect: glowing outline */
-.github-button:hover {
-    color: #ffffff;
-    border-color: #003366; /* GitHub green */
-    box-shadow: 0 0 25px #003366; /* Glowing green shadow */
-    background-color: #444;
-}
-
-/* Optional: Make button look pressed when clicked */
-.github-button:active {
-    box-shadow: none;
-    background-color: #2c2c2c;
-}
-
-/* Styling for the name */
-.name {
-    font-family: 'Poppins', sans-serif;
-	display: flex;
-	bottom: 0;
-    left: 0;
-    font-size: 2em;
-    font-weight: 600;
-    color: coral;
-    margin-top: 50px;
-    text-align: left; /* Center align the name */
-}
-
-.bruh {
-    padding-right: 100px;
-}
-
-/* Styling for the email button */
-.email-button {
-    display: inline-block;
-    border: none;
     padding: 0;
-    text-decoration: none;
-    cursor: pointer;
+    box-sizing: border-box;
 }
 
-.email-button img {
-    width: 630px; /* Adjust the size of the image */
-    height: auto;
-    border-radius: 5px; /* Optional: Add rounded corners */
-    transition: transform 0.3s ease-in-out;
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #2E2E2E;
+    color: #D3D3D3;
+    line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
-/* Hover effect for the image button */
-.email-button img:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
-}
-.section {
-    align-content: center;
-    max-width: 500px;
-    margin: 0 auto;
-}
-.section_text{
-	text-align: left;
-}
-.align{
-	text-align:left;
-}
-/* Initial size for the PARC image */
-.parc-image {
-	align-content: center;
-    width: 380px;  /* Fixed width */
-    height: 300px; /* Initial height */
-    object-fit: cover; /* Ensure the image fits within the container */
-    overflow: hidden; /* Hide the parts of the image that go beyond the container */
-    transition: height 0.3s ease; /* Smooth transition effect for height */
-}
-
-/* Expands vertically on hover */
-.parc-image:hover {
-    height: 500px; /* Increases height on hover */
-}
-
-/* Container for image and arrow */
-.image-container {
-    position: relative;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-/* Arrow indicating hover */
-.hover-arrow {
-    width: 0; 
-    height: 0; 
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid white; /* The color of the arrow */
-    position: absolute;
-    bottom: -15px; /* Place arrow below the image */
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0.7;
-}
-
-/* Hover effect for the arrow */
-.image-container:hover .hover-arrow {
-    opacity: 1;
-    bottom: -20px; /* Moves the arrow down slightly for a hover effect */
-}
-/* Footer Styles */
-footer {
-    background-color: #333;
-    color: coral;
-    padding: 20px 0;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+/* Container with Overall Padding */
+.container {
+    padding: 0 40px; /* Adjust padding as desired */
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.footer-section {
-    flex: 1;
-    margin: 10px;
+/* Sidebar Navigation */
+.sidebar {
+    position: fixed;
+    top: 50%;
+    left: 20px; /* Adjust the position from the left */
+    padding-left: 20px; /* Add padding on the left side */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.footer-section h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.footer-section p {
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.footer-section a {
-    color: #fff;
+.sidebar a {
+    color: #D3D3D3;
     text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+	margin-left: 200px
 }
 
-.footer-section a:hover {
-    text-decoration: underline;
+.sidebar a:hover {
+    color: coral;
 }
 
-.footer-icon {
-    width: 30px;
-    margin: 0 10px;
-    vertical-align: middle;
+
+/* Main Content */
+.content {
+    margin-left: 400px; /* Sidebar offset */
+}
+
+/* Section Styling */
+.section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.full-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-center {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 3em;
+    color: coral;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.5em;
+    color: coral;
+    margin-bottom: 15px;
+}
+
+a {
+    color: #D3D3D3;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s;
+}
+
+a:hover {
+    border-bottom: 2px solid coral;
+}
+
+.organization-image {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px 0;
+    border-radius: 8px;
     transition: transform 0.3s ease;
 }
 
-.footer-icon:hover {
+.organization-image:hover {
+    transform: scale(1.05);
+}
+
+/* Social Links */
+.social-links img {
+    width: 35px;
+    margin: 10px;
+    transition: transform 0.3s;
+}
+
+.social-links img:hover {
     transform: scale(1.2);
 }
 
-.footer-bottom {
-    padding: 10px;
-    font-size: 14px;
-    background-color: #222;
-    margin-top: 20px;
-}
-
-.profile-image {
-    border: medium solid white;
-    border-radius: 100px; /* Optional: adds rounded corners */
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
 }
