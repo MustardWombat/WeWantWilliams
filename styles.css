@@ -16,7 +16,7 @@ body {
 
 /* Container with Overall Padding */
 .container {
-    padding: 0 40px; /* Adjust padding as desired */
+    padding: 0 20px; /* Adjust padding as needed */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -25,12 +25,27 @@ body {
 .sidebar {
     position: fixed;
     top: 50%;
-    left: 20px; /* Adjust the position from the left */
-    padding-left: 20px; /* Add padding on the left side */
+    left: 200px; /* Slight offset from the edge for a seamless look */
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 15px;
+    max-width: 400px; /* Restrict sidebar width for a compact layout */
+}
+
+.sidebar h1 {
+    font-size: 1.8em;
+    color: coral;
+    margin-bottom: 10px;
+}
+
+.sidebar p {
+    font-size: 0.9em;
+    color: #D3D3D3;
+    margin-bottom: 15px;
+    max-width: 180px; /* Limit width of bio text */
+    line-height: 1.4; /* Adjust line spacing for better readability */
 }
 
 .sidebar a {
@@ -38,17 +53,16 @@ body {
     text-decoration: none;
     font-weight: 400;
     transition: color 0.3s ease;
-	margin-left: 200px
+    padding-left: 5px; /* Adjust alignment without pushing too far */
 }
 
 .sidebar a:hover {
     color: coral;
 }
 
-
 /* Main Content */
 .content {
-    margin-left: 400px; /* Sidebar offset */
+    margin-left: 220px; /* Sidebar offset for larger screens */
 }
 
 /* Section Styling */
@@ -70,12 +84,6 @@ body {
 .content-center {
     max-width: 700px;
     margin: 0 auto;
-}
-
-h1 {
-    font-size: 3em;
-    color: coral;
-    margin-bottom: 20px;
 }
 
 h2 {
@@ -118,7 +126,57 @@ a:hover {
     transform: scale(1.2);
 }
 
-/* Smooth Scrolling */
-html {
-    scroll-behavior: smooth;
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    /* Sidebar as Top Navigation */
+    .sidebar {
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 10px 0;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .sidebar h1 {
+        font-size: 1.2em;
+        margin-bottom: 0;
+    }
+
+    .sidebar p {
+        display: none; /* Hide introductory text on smaller screens */
+    }
+
+    .sidebar a {
+        margin-left: 0;
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    /* Adjust content margin */
+    .content {
+        margin-left: 0;
+    }
+
+    /* Adjust section padding and font sizes */
+    .section {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    /* Responsive images */
+    .organization-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .social-links img {
+        width: 30px;
+    }
 }
