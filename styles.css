@@ -19,6 +19,7 @@ body {
     padding: 0 20px; /* Adjust padding as needed */
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
 }
 
 /* Sidebar Navigation */
@@ -63,6 +64,7 @@ body {
 /* Main Content */
 .content {
     margin-left: 220px; /* Sidebar offset for larger screens */
+    flex: 1;
 }
 
 /* Section Styling */
@@ -103,83 +105,6 @@ a:hover {
     border-bottom: 2px solid coral;
 }
 
-.organization-image {
-    width: 100%;
-    max-width: 400px;
-    margin: 10px 0;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.organization-image:hover {
-    transform: scale(1.05);
-}
-
-/* Social Links */
-.social-links img {
-    width: 35px;
-    margin: 10px;
-    transition: transform 0.3s;
-}
-
-.social-links img:hover {
-    transform: scale(1.2);
-}
-
-/* Responsive Design for Mobile */
-@media (max-width: 768px) {
-    /* Sidebar as Top Navigation */
-    .sidebar {
-        position: relative;
-        top: 0;
-        left: 0;
-        padding: 10px 0;
-        width: 100%;
-        flex-direction: row;
-        justify-content: center;
-        gap: 10px;
-        align-items: center;
-    }
-
-    .sidebar h1 {
-        font-size: 1.2em;
-        margin-bottom: 0;
-    }
-
-    .sidebar p {
-        display: none; /* Hide introductory text on smaller screens */
-    }
-
-    .sidebar a {
-        margin-left: 0;
-        padding: 10px;
-        font-size: 1em;
-    }
-
-    /* Adjust content margin */
-    .content {
-        margin-left: 0;
-    }
-
-    /* Adjust section padding and font sizes */
-    .section {
-        padding: 20px;
-    }
-
-    h2 {
-        font-size: 2em;
-    }
-
-    /* Responsive images */
-    .organization-image {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .social-links img {
-        width: 30px;
-    }
-}
 /* 2x2 Grid Layout for Student Organizations */
 .organization-grid {
     display: grid;
@@ -234,4 +159,74 @@ a:hover {
 
 .organization-item:hover::before {
     background: rgba(0, 0, 0, 0); /* Remove overlay on hover */
+}
+
+/* Social Links */
+.social-links img {
+    width: 35px;
+    margin: 10px;
+    transition: transform 0.3s;
+}
+
+.social-links img:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack sidebar on top of content */
+    }
+
+    /* Sidebar as Top Navigation */
+    .sidebar {
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 10px 0;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .sidebar h1 {
+        font-size: 1.2em;
+        margin-bottom: 0;
+    }
+
+    .sidebar p {
+        display: none; /* Hide introductory text on smaller screens */
+    }
+
+    .sidebar a {
+        margin-left: 0;
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    /* Adjust content margin */
+    .content {
+        margin-left: 0;
+    }
+
+    /* Adjust section padding and font sizes */
+    .section {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    /* Responsive images */
+    .organization-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .social-links img {
+        width: 30px;
+    }
 }
