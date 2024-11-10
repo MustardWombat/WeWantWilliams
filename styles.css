@@ -102,7 +102,7 @@ a {
 }
 
 a:hover {
-    border-bottom: 2px solid coral;
+    border-bottom: 2px solid #4DB6AC;
 }
 
 /* 2x2 Grid Layout for Student Organizations */
