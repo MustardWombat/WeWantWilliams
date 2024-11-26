@@ -35,6 +35,11 @@ body {
     max-width: 400px; /* Restrict sidebar width for a compact layout */
     padding: 60px; /* Add padding for spacing from the edges */
 }
+@media (max-width: 1300px) {
+    .sidebar {
+        display: none; /* Hide the sidebar */
+    }
+}
 
 .sidebar h1 {
     font-size: 1.8em;
