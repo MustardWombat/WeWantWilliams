@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <!-- Existing CSS and New CSS for the Skills Section -->
+    <!-- Existing CSS and New CSS for the Progressive Bar -->
     <style>
         /* General Styles */
         * {
@@ -218,7 +218,7 @@
             }
         }
         
-        /* --- New CSS for the Dynamic Skills Section --- */
+        /* --- New CSS for the Progressive Bar in the Skills Section --- */
         .skill-container {
             background: #444;
             border: 1px solid #666;
@@ -232,18 +232,20 @@
             margin-bottom: 8px;
             color: coral;
         }
-        .skill-bar {
-            display: flex;
-            gap: 5px;
-        }
-        .segment {
-            flex: 1;
-            height: 20px;
+        /* Progress bar container */
+        .progress-bar {
+            width: 100%;
             background-color: #555;
+            height: 20px;
             border-radius: 4px;
+            overflow: hidden;
         }
-        .segment.filled {
+        /* The fill element; width will be set dynamically */
+        .progress-fill {
+            height: 100%;
             background-color: #4DB6AC;
+            width: 0%;
+            transition: width 0.5s ease-in-out;
         }
         #skills-container {
             display: flex;
@@ -340,12 +342,12 @@
                 </div>
             </section>
 
-            <!-- Skills Section (Dynamic GitHub Data) -->
+            <!-- Skills Section (Dynamic GitHub Data with Progressive Bar) -->
             <section id="skills" class="section full-screen">
                 <div class="content-center">
                     <h2>Skills</h2>
                     <div id="skills-container">
-                        <!-- Dynamic skill bars will be inserted here -->
+                        <!-- Dynamic progress bars (or fallback skill names) will be inserted here -->
                     </div>
                 </div>
             </section>
@@ -386,16 +388,18 @@
         </main>
     </div>
 
-    <!-- JavaScript: Fetch GitHub Data and Build the Skills Section -->
+    <!-- JavaScript: Fetch GitHub Data and Build the Progressive Skills Section -->
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
             // Use your GitHub username from https://github.com/MustardWombat
             const username = 'MustardWombat';
             // List the languages you want to display; adjust or add languages as desired.
-            const languagesToShow = ['Python', 'C++','HTML','CSS','Java','JavaScript', 'Swift'];
+            const languagesToShow = ['Python', 'C++'];
             // Initialize an object to tally total bytes for each language.
             const languageTotals = {};
             languagesToShow.forEach(lang => languageTotals[lang] = 0);
+
+            const skillsContainer = document.getElementById('skills-container');
 
             try {
                 // Fetch public repositories (up to 100)
@@ -410,7 +414,7 @@
                     const langResponse = await fetch(repo.languages_url);
                     if (!langResponse.ok) return; // Skip on error.
                     const langData = await langResponse.json();
-                    // Add up the bytes for languages we're interested in.
+                    // Sum the bytes for languages we're interested in.
                     for (const lang in langData) {
                         if (languagesToShow.includes(lang)) {
                             languageTotals[lang] += langData[lang];
@@ -421,17 +425,19 @@
 
                 // Find the maximum byte count among the specified languages (for scaling)
                 const maxBytes = Math.max(...languagesToShow.map(lang => languageTotals[lang]));
+                // Use a scaling factor so that even the top language doesn't fill 100%
+                const scalingFactor = 1.1;
+                const targetBytes = maxBytes * scalingFactor;
 
-                const skillsContainer = document.getElementById('skills-container');
-
-                // For each language, compute a rating from 0 to 4 and create its skill bar.
+                // For each language, compute a percentage (0-100) and create its progress bar.
                 languagesToShow.forEach(lang => {
                     const bytes = languageTotals[lang];
-                    let rating = 0;
-                    if (maxBytes > 0) {
-                        rating = Math.round((bytes / maxBytes) * 4);
+                    let percentage = 0;
+                    if (targetBytes > 0) {
+                        // This percentage will be lower than 100% for the top language,
+                        // leaving room for improvement.
+                        percentage = Math.min((bytes / targetBytes) * 100, 100);
                     }
-                    if (rating > 4) rating = 4;
 
                     // Create a container for this skill.
                     const skillDiv = document.createElement('div');
@@ -442,27 +448,38 @@
                     skillNameDiv.className = 'skill-name';
                     skillNameDiv.textContent = `${lang} (${bytes} bytes)`;
 
-                    // Create the skill bar with 4 segments.
-                    const skillBarDiv = document.createElement('div');
-                    skillBarDiv.className = 'skill-bar';
-                    for (let i = 0; i < 4; i++) {
-                        const seg = document.createElement('div');
-                        seg.className = 'segment';
-                        if (i < rating) {
-                            seg.classList.add('filled');
-                        }
-                        skillBarDiv.appendChild(seg);
-                    }
+                    // Create the progress bar container.
+                    const progressBarContainer = document.createElement('div');
+                    progressBarContainer.className = 'progress-bar';
 
-                    // Append the skill name and bar to the container, then add it to the page.
+                    // Create the fill element and set its width according to the computed percentage.
+                    const progressFill = document.createElement('div');
+                    progressFill.className = 'progress-fill';
+                    progressFill.style.width = percentage + '%';
+
+                    // Append the fill element into the progress bar container.
+                    progressBarContainer.appendChild(progressFill);
+
+                    // Append the skill name and progress bar to the container.
                     skillDiv.appendChild(skillNameDiv);
-                    skillDiv.appendChild(skillBarDiv);
+                    skillDiv.appendChild(progressBarContainer);
                     skillsContainer.appendChild(skillDiv);
                 });
             } catch (error) {
                 console.error('Error fetching GitHub data:', error);
-                const skillsContainer = document.getElementById('skills-container');
-                skillsContainer.textContent = 'Error loading GitHub data.';
+                // Fallback: Display the skill names without the progress bar.
+                languagesToShow.forEach(lang => {
+                    const skillDiv = document.createElement('div');
+                    skillDiv.className = 'skill-container';
+
+                    const skillNameDiv = document.createElement('div');
+                    skillNameDiv.className = 'skill-name';
+                    // Indicate that detailed data is unavailable.
+                    skillNameDiv.textContent = `${lang} (data unavailable)`;
+
+                    skillDiv.appendChild(skillNameDiv);
+                    skillsContainer.appendChild(skillDiv);
+                });
             }
         });
     </script>
