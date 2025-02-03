@@ -12,6 +12,8 @@ body {
     color: #D3D3D3;
     line-height: 1.6;
     scroll-behavior: smooth;
+	 overflow-x: hidden;
+
 }
 
 /* Container with Overall Padding */
@@ -114,7 +116,7 @@ a:hover {
 /* 2x2 Grid Layout for Student Organizations */
 .organization-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-columns: repeat(1, 1fr); /* 2 columns */
     gap: 20px; /* Space between items */
     margin-top: 20px;
 }
@@ -126,6 +128,7 @@ a:hover {
     justify-content: center;
     text-align: center;
     height: 230px; /* Fixed height for each box */
+	    width:600px; /* Fixed height for each box */
     background-size: cover; /* Ensures the image covers the entire box */
     background-position: center;
     border-radius: 8px;

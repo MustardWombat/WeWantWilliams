@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Tag Manager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ENXM7R36C7"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -14,6 +14,244 @@
     <title>James Williams</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Existing CSS and New CSS for the Skills Section -->
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #2E2E2E;
+            color: #D3D3D3;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        .container {
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+        }
+        /* Sidebar Navigation */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+            max-width: 400px;
+            padding: 60px;
+        }
+        @media (max-width: 1300px) {
+            .sidebar {
+                display: none;
+            }
+        }
+        .sidebar h1 {
+            font-size: 1.8em;
+            color: coral;
+            margin-bottom: 10px;
+        }
+        .sidebar p {
+            font-size: 0.9em;
+            color: #D3D3D3;
+            margin-bottom: 15px;
+            max-width: 180px;
+            line-height: 1.4;
+        }
+        .sidebar a {
+            color: #D3D3D3;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            padding-left: 5px;
+        }
+        .sidebar a:hover {
+            color: coral;
+        }
+        /* Main Content */
+        .content {
+            margin-left: 220px;
+            flex: 1;
+        }
+        /* Section Styling */
+        .section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .full-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .content-center {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        h2 {
+            font-size: 2.5em;
+            color: coral;
+            margin-bottom: 15px;
+        }
+        a {
+            color: #D3D3D3;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.3s;
+        }
+        a:hover {
+            border-bottom: 2px solid #4DB6AC;
+        }
+        /* Organization Grid and Items */
+        .organization-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .organization-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 230px;
+            width: 600px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            filter: brightness(50%);
+        }
+        .organization-item:hover {
+            transform: scale(1.05);
+            filter: brightness(100%);
+        }
+        .organization-item p {
+            position: relative;
+            font-size: 1.2em;
+            padding: 10px;
+            margin: 0;
+            color: #ffffff;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            font-weight: bold;
+        }
+        .organization-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            transition: background 0.3s ease;
+            z-index: 0;
+        }
+        .organization-item:hover::before {
+            background: rgba(0, 0, 0, 0);
+        }
+        /* Social Links */
+        .social-links img {
+            width: 35px;
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+        .social-links img:hover {
+            transform: scale(1.2);
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                position: relative;
+                top: 0;
+                left: 0;
+                padding: 1000px 0;
+                width: 100%;
+                flex-direction: row;
+                justify-content: center;
+                gap: 10px;
+                align-items: center;
+            }
+            .sidebar h1 {
+                font-size: 1.2em;
+                margin-bottom: 0;
+            }
+            .sidebar p {
+                display: none;
+            }
+            .sidebar a {
+                margin-left: 0;
+                padding: 10px;
+                font-size: 1em;
+            }
+            .content {
+                margin-left: 0;
+            }
+            .section {
+                padding: 20px;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            .organization-image {
+                max-width: 100%;
+                height: auto;
+            }
+            .social-links img {
+                width: 30px;
+            }
+        }
+        
+        /* --- New CSS for the Dynamic Skills Section --- */
+        .skill-container {
+            background: #444;
+            border: 1px solid #666;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+        }
+        .skill-name {
+            font-size: 1.2em;
+            margin-bottom: 8px;
+            color: coral;
+        }
+        .skill-bar {
+            display: flex;
+            gap: 5px;
+        }
+        .segment {
+            flex: 1;
+            height: 20px;
+            background-color: #555;
+            border-radius: 4px;
+        }
+        .segment.filled {
+            background-color: #4DB6AC;
+        }
+        #skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -21,10 +259,10 @@
         <aside class="sidebar">
             <h1>James Williams{</h1>
             Electronics and Computer Science major at Michigan State University.
-            <!-- Name added at the top of the sidebar -->
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#organizations">Organizations</a>
+            <a href="#skills">Skills</a>
             <a href="#certifications">Certifications</a>
             <a href="#resume">Resume</a>
             <a href="#contact">Contact</a>
@@ -35,9 +273,9 @@
             <!-- Introduction Section -->
             <section id="about" class="section full-screen">
                 <div class="content-center">
-                    <img src="Images/Website.gif">
-                    <p>I'm a Student at Michigan State University&nbsp;</p>
-                    <p>I've gotten where I am today because of perseverance and passion&nbsp;&nbsp;</p>
+                    <img src="Images/Website.gif" alt="Intro Image">
+                    <p>I'm a Student at Michigan State University</p>
+                    <p>I've gotten where I am today because of perseverance and passion</p>
                     <section>
                         <center>
                             <div style="display: flex; gap: 20px;">
@@ -64,8 +302,8 @@
                         <div class="organization-item" style="background-image: url('Images/NDB.png');">
                             <p><a href="https://github.com/MustardWombat/Student-Academic-Performance-Management-System" target="_blank">&nbsp;</a></p>
                         </div>
-						                        <div class="organization-item" style="background-image: url('Images/AcePaceQuizGenerator.png');">
-                            <p><a href="https://github.com/MustardWombat/AcePace" target="_blank">OpenAI Powered Quiz Generator | ACEPACE</a></p>
+                        <div class="organization-item" style="background-image: url('Images/AcePaceQuizGenerator.png');">
+                            <p><a href="https://github.com/MustardWombat/AcePace" target="_blank"></a></p>
                         </div>
                         <div class="organization-item" style="background-image: url('Images/BlockChainSim.png');">
                             <p><a href="https://github.com/MustardWombat/Student-Academic-Performance-Management-System" target="_blank">&nbsp;</a></p>
@@ -73,7 +311,6 @@
                         <div class="organization-item" style="background-image: url('Images/CWEDA.png');">
                             <p><a href="https://github.com/MustardWombat/Student-Academic-Performance-Management-System" target="_blank">&nbsp;</a></p>
                         </div>
-                        <!-- Add more project items as needed -->
                     </div>
                 </div>
             </section>
@@ -89,13 +326,11 @@
                         <a href="https://www.msuaiclub.com/">
                             <div class="organization-item" style="background-image: url('Images/AIClub.jpg');">
                                 <p>AI Club</p>
-                                <p>&nbsp;</p>
                             </div>
                         </a>
                         <a href="https://www.team815.com/">
                             <div class="organization-item" style="background-image: url('Images/Robot.jpg');">
-                                <p>FRC Advanced Power&nbsp;</p>
-                                <p>&nbsp;</p>
+                                <p>FRC Advanced Power</p>
                             </div>
                         </a>
                         <div class="organization-item" style="background-image: url('Images/blank.png');">
@@ -105,19 +340,24 @@
                 </div>
             </section>
 
+            <!-- Skills Section (Dynamic GitHub Data) -->
+            <section id="skills" class="section full-screen">
+                <div class="content-center">
+                    <h2>Skills</h2>
+                    <div id="skills-container">
+                        <!-- Dynamic skill bars will be inserted here -->
+                    </div>
+                </div>
+            </section>
+
             <!-- Certifications Section -->
             <section id="certifications" class="section full-screen">
                 <div class="content-center">
                     <h2>Certifications</h2>
                     <div class="organization-grid">
-                        <!-- Example Certification 1 -->
-      				Amazon Cloud Practioneer Essentials
-						
-					Harvard's CS50X
-						
-					Microsoft Excel
-
-                        <!-- Add more certifications as needed -->
+                        Amazon Cloud Practitioner Essentials<br>
+                        Harvard's CS50X<br>
+                        Microsoft Excel
                     </div>
                 </div>
             </section>
@@ -145,5 +385,86 @@
             </section>
         </main>
     </div>
+
+    <!-- JavaScript: Fetch GitHub Data and Build the Skills Section -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Use your GitHub username from https://github.com/MustardWombat
+            const username = 'MustardWombat';
+            // List the languages you want to display; adjust or add languages as desired.
+            const languagesToShow = ['Python', 'C++','HTML','CSS'];
+            // Initialize an object to tally total bytes for each language.
+            const languageTotals = {};
+            languagesToShow.forEach(lang => languageTotals[lang] = 0);
+
+            try {
+                // Fetch public repositories (up to 100)
+                const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
+                if (!reposResponse.ok) {
+                    throw new Error('Failed to fetch repositories.');
+                }
+                const repos = await reposResponse.json();
+
+                // For each repository, fetch the language breakdown.
+                const fetchLanguagePromises = repos.map(async repo => {
+                    const langResponse = await fetch(repo.languages_url);
+                    if (!langResponse.ok) return; // Skip on error.
+                    const langData = await langResponse.json();
+                    // Add up the bytes for languages we're interested in.
+                    for (const lang in langData) {
+                        if (languagesToShow.includes(lang)) {
+                            languageTotals[lang] += langData[lang];
+                        }
+                    }
+                });
+                await Promise.all(fetchLanguagePromises);
+
+                // Find the maximum byte count among the specified languages (for scaling)
+                const maxBytes = Math.max(...languagesToShow.map(lang => languageTotals[lang]));
+
+                const skillsContainer = document.getElementById('skills-container');
+
+                // For each language, compute a rating from 0 to 4 and create its skill bar.
+                languagesToShow.forEach(lang => {
+                    const bytes = languageTotals[lang];
+                    let rating = 0;
+                    if (maxBytes > 0) {
+                        rating = Math.round((bytes / maxBytes) * 4);
+                    }
+                    if (rating > 4) rating = 4;
+
+                    // Create a container for this skill.
+                    const skillDiv = document.createElement('div');
+                    skillDiv.className = 'skill-container';
+
+                    // Create an element for the skill name and byte count.
+                    const skillNameDiv = document.createElement('div');
+                    skillNameDiv.className = 'skill-name';
+                    skillNameDiv.textContent = `${lang} (${bytes} bytes)`;
+
+                    // Create the skill bar with 4 segments.
+                    const skillBarDiv = document.createElement('div');
+                    skillBarDiv.className = 'skill-bar';
+                    for (let i = 0; i < 4; i++) {
+                        const seg = document.createElement('div');
+                        seg.className = 'segment';
+                        if (i < rating) {
+                            seg.classList.add('filled');
+                        }
+                        skillBarDiv.appendChild(seg);
+                    }
+
+                    // Append the skill name and bar to the container, then add it to the page.
+                    skillDiv.appendChild(skillNameDiv);
+                    skillDiv.appendChild(skillBarDiv);
+                    skillsContainer.appendChild(skillDiv);
+                });
+            } catch (error) {
+                console.error('Error fetching GitHub data:', error);
+                const skillsContainer = document.getElementById('skills-container');
+                skillsContainer.textContent = 'Error loading GitHub data.';
+            }
+        });
+    </script>
 </body>
 </html>
