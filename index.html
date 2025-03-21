@@ -7,48 +7,6 @@
   <link rel="stylesheet" href="style.css" />
   <style type="text/css">
     @import url("styles.css");
-
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.9);
-      transition: opacity 0.3s ease;
-    }
-    .modal-content {
-      background-color: #252526;
-      margin: 5% auto;
-      padding: 20px;
-      border: 1px solid #444;
-      width: 80%;
-      max-width: 800px;
-      border-radius: 8px;
-      color: #e0e0e0;
-      animation: slideIn 0.5s ease-out;
-    }
-    @keyframes slideIn {
-      from { transform: translateY(50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .close:hover,
-    .close:focus {
-      color: #fff;
-      text-decoration: none;
-      cursor: pointer;
-    }
   </style>
 </head>
 <body>
@@ -87,9 +45,9 @@
           blockchain, and application development. Creating innovative solutions
           through code.
         </p>
-        <div class="code-line"><span>01</span>// function solveProblems(ideas, skills) {</div>
-        <div class="code-line"><span>02</span>//    return ideas.map(idea => implement(idea, skills));</div>
-        <div class="code-line"><span>03</span>// }</div>
+        <div class="code-line"><span>01</span> function solveProblems(ideas, skills) {</div>
+        <div class="code-line"><span>02</span>    return ideas.map(idea => implement(idea, skills));</div>
+        <div class="code-line"><span>03</span> }</div>
       </div>
       <div class="hero-image"></div>
     </div>
@@ -125,7 +83,7 @@
       <div class="portfolio-grid">
         <!-- Project 1 -->
         <div class="portfolio-item">
-          <img src="Images/PARC.gif" alt="Kinematic Vision Based Autonomous Robot" />
+          <img src="Images/PARCa.gifz" alt="Kinematic Vision Based Autonomous Robot" />
           <div class="portfolio-content">
             <h3>Vision Based Autonomous Robot</h3>
             <p>&nbsp;</p>
@@ -337,12 +295,6 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <div class="social-links">
-        <a href="#">G</a>
-        <a href="#">L</a>
-        <a href="#">T</a>
-        <a href="#">M</a>
-      </div>
       <p class="footer-text">&copy; 2025 James Williams | Detroit, Michigan | will4379@msu.edu | (734) 394-8207</p>
     </div>
   </footer>
